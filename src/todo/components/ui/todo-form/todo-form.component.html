@@ -1,0 +1,11 @@
+<div class="todo-form">
+    <form #toDoForm="ngForm" (ngSubmit)="onSubmit()">
+        <label for="todo-name"></label>
+        <input type="text" name="todo-name" id="todo-name" [(ngModel)]="newTodo.name" placeholder="Entrer votre tache">
+    
+        <label for="todo-priority"></label>
+        <input type="number" name="todo-priority" id="todo-priority" min="0" max="10" [(ngModel)]="newTodo.priorityOrder">
+    
+        <button>Soumettre ma tache</button>
+    </form>
+</div>

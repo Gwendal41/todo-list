@@ -1,0 +1,9 @@
+<div class="create-todo">
+
+    <button (click)="isFormToggled = !isFormToggled">Créer une nouvelle To Do List</button>
+    <ui-todo-form 
+    *ngIf="isFormToggled === true"
+    (sendNewTodo)="receiveNewTodo($event)"
+    ></ui-todo-form>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="todo-list">
+    <h2>Ma Liste de Tâches : </h2>
+    <ui-todo-details
+*ngFor="let task of toDoListFiltered.length === 0 ? toDoList : toDoListFiltered"
+[toDoChild] = "task"
+(sendToDoToDelete)="receiveToDoToDelete($event)"
+></ui-todo-details>
+
+</div>
+

@@ -1,0 +1,18 @@
+<div class="task">
+    <div class="task-element" [ngStyle]="{borderColor:toDoChild.isDone ? 'green' : 'red'}">
+        <h3> Tâche : {{toDoChild.name}}</h3>
+        <p> Priorité : {{toDoChild.priorityOrder}}</p>
+        <p> Effectué : {{toDoChild.isDone}}</p>
+
+        <div class="task-button">
+            <button (click)="emitToDoToDelete()">Supprimer</button>
+            <button (click)="formUpdateIsToggle = !formUpdateIsToggle">Editer</button>
+            <button (click)="toDoChild.isDone = !toDoChild.isDone" >J'ai éffectué ma tâche</button>
+            <ui-todo-form-update
+            *ngIf="formUpdateIsToggle"
+            (sendTodoToUpdate)="receiveToDoToUpdate($event)"
+            ></ui-todo-form-update>
+        </div>
+    </div>
+</div>
+

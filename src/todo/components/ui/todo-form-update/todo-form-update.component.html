@@ -1,0 +1,10 @@
+    <form #toDoForm="ngForm" (ngSubmit)="emitToUpdate()">
+        <label for="todo-name"></label>
+        <input type="text" name="todo-name" id="todo-name" [(ngModel)]="toDoUpdate.name" placeholder="Modifier ma tâche">
+    
+        <label for="todo-priority"></label>
+        <input type="number" name="todo-priority" id="todo-priority" min="0" max="10" [(ngModel)]="toDoUpdate.priorityOrder">
+
+        <button>Editer ma tache</button>
+    </form>
+
