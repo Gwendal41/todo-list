@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
-import {AngularFireModule} from '@angular/fire/compat';
-import { environment } from 'src/environments/environment';
+import {MessageService} from 'primeng/api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthService } from 'src/auth/shared/auth.service';
+import { AuthGuard } from 'src/core/guards/auth.guard';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 
 
 @NgModule({
@@ -13,11 +16,13 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [
+    MessageService,
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,26 @@
+    <div class="signin-form">
+        <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+            <div class="text-center mb-5">
+                <img src="assets/LoL_icon.svg.png" alt="Image" height="50" class="mb-3">
+                <div class="text-900 text-3xl font-medium mb-3">Bienvenue sur League of Draven</div>
+                <span class="text-600 font-medium line-height-3">Vous n'avez pas de compte ?</span>
+                <a *ngIf="userCreated === true" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" (click)="userCreated = false">Créer un compte !</a>
+                <a *ngIf="userCreated === false" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" (click)="userCreated = true">J'ai deja un compte !</a>
+            </div>
+        
+            <div>
+                <label for="email" class="block text-900 font-medium mb-2">Email</label>
+                <input id="email" type="text" placeholder="Adresse Email" pInputText class="w-full mb-3" [(ngModel)]="newUser.email">
+        
+                <label for="password" class="block text-900 font-medium mb-2">Password</label>
+                <input id="password" type="password" placeholder="Mot de passe" pInputText class="w-full mb-3" [(ngModel)]="newUser.password">
+        
+                <button *ngIf="userCreated" pButton pRipple label="Sign In" icon="pi pi-user" class="w-full" (click)="signIn()">Se connecter</button>
+                <button *ngIf="!userCreated" pButton pRipple label="Sign In" icon="pi pi-user" class="w-full" (click)="signUp()">Créer un compte</button>
+                <button *ngIf="userCreated" pButton pRipple label="Sign In" icon="pi pi-user" class="w-full" (click)="resetPassword()">Reinitialiser mon mot de passe</button>
+            </div>
+        </div>
+    </div>
+    
+
+

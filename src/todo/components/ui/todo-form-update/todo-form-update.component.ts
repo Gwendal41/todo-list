@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Todo } from 'src/todo/models/todo.model';
-import { DbTodoService } from 'src/todo/shared/db-todo.service';
 
 @Component({
   selector: 'ui-todo-form-update',
@@ -14,7 +13,7 @@ export class TodoFormUpdateComponent implements OnInit {
 
   toDoUpdate: Todo = new Todo('',0, false);
 
-  constructor( private dbToDoS: DbTodoService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

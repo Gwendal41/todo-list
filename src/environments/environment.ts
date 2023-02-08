@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  firebaseConfig : {
+   configGoudale1 : {
     apiKey: "AIzaSyCV7SYPd2hnyHKM6LI2CxDq6lcYtB8ZzK0",
     authDomain: "todolist-goudal.firebaseapp.com",
     databaseURL: "https://todolist-goudal-default-rtdb.europe-west1.firebasedatabase.app",

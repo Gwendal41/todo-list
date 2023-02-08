@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/auth/shared/auth.service';
 
 
 @Component({
@@ -10,13 +11,19 @@ export class TodoHomeComponent implements OnInit {
 
   searchedString : string = "";
 
-  constructor() { }
+  constructor(
+    private dbAuthS : AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
   receiveSearchedString(str : string): void{
   this.searchedString = str;
+  }
+
+  signOut(): void {
+    this.dbAuthS.signOut()
   }
 
 }
